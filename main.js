@@ -29,7 +29,7 @@ async function find_my_model(m) {
     account_hash_string
   ).then(response => {
     console.log("Owned " + m + "(s)");
-    console.log(response.data.data);
+    console.log(response.data[0].data);
   }).catch(error => {
     e = "Failed to find base key at path"
     if (error.toString().includes(e.toString())) {
@@ -43,7 +43,7 @@ async function find_my_model(m) {
 }
 
 async function call(){
-  await find_my_model("Daytona");
   await find_my_model("Daydate");
+  await find_my_model("Daytona");
 }
 call();
