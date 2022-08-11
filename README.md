@@ -18,23 +18,17 @@ Contains functions that will be re-used and modified / cleaned up when building 
 Functions can be used in a node.js webapp or any javascript backend. Keys should always be generated and
 stored client-side.
 
---------------------------
-|         CORE           |
---------------------------
+## Currently supported - main.js
 - Query a Collection's / Product row's contract hash by reading the items key in the "Parent contract". (By Collection Name)
 - Query all Token-hashs that belong to an account for a given Collection. (By Collection Name)
 - Transfer owned tokens. (By Token Hash && Collection contract hash)
 - Mint Tokens, restricted to manufacturer ( "INSTALLER" of the "Parent contract" ). (By Collection contract hash).
 
--------------------------------------------
-|         CURRENTLY UNSUPPORTED           |
--------------------------------------------
+## Currently unsupported - main.js
 - Approve operators
 - Burn
 
---------------------------
-|         KEYS           |
---------------------------
+## Keys - main.js
 - Create an Ed25519 Keypair and write it to a .pem file.
 - Parse the Ed25519 Keypair and use it as an asymmetric keypair to sign deploys.
 - Parse the pubkey.pem file to lookup the publickey hex with the explorer.
