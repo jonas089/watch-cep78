@@ -1,3 +1,4 @@
-# A Casper supply-chain project built upon the [CEP-78 NFT Standard]
+# Casper-CEP78 NFT supply-chain project
 
-## Contract 
+## Architecture
+![Preview](https://github.com/jonas089/watch-cep78/blob/master/mindmap.png "Contract Architecture")
