@@ -358,6 +358,20 @@ pub extern "C" fn set_variables() {
 // Mints a new token. Minting will fail if allow_minting is set to false.
 #[no_mangle]
 pub extern "C" fn mint() {
+    // Shortcut ( hardcoded permission model ) for testing. => would be "mint_mode: installer" in
+    // production env. This will make sure that even in public mint mode only the installer can mint
+    // to prevent errors when testing.
+    let installer = utils::get_account_hash(
+        INSTALLER,
+        NFTCoreError::MissingInstaller,
+        NFTCoreError::InvalidInstaller,
+    );
+    // contract installer can mint
+    if installer != runtime::get_caller() {
+        runtime::revert(NFTCoreError::InvalidMinter);
+    }
+    // end of shortcut
+
     // The contract owner can toggle the minting behavior on and off over time.
     // The contract is toggled on by default.
     let minting_status = utils::get_stored_value_with_user_errors::<bool>(
@@ -869,6 +883,7 @@ pub extern "C" fn set_approval_for_all() {
 pub extern "C" fn transfer() {
     // If we are in minter or assigned mode we are not allowed to transfer ownership of token, hence
     // we revert.
+
     if let OwnershipMode::Minter | OwnershipMode::Assigned =
         utils::get_ownership_mode().unwrap_or_revert()
     {
