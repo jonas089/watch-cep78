@@ -13,10 +13,8 @@ A supply chain project built upon the Casper-CEP78 NFT standard with requirement
 ## Architecture
 ![Preview](https://github.com/jonas089/watch-cep78/blob/master/mindmap.png "Contract Architecture")
 
-# main.js - client concept
-Contains functions that will be re-used and modified / cleaned up when building the actual prototype.
-Functions can be used in a node.js webapp or any javascript backend. Keys should always be generated and
-stored client-side.
+# Modular NFT Javascript library is read at 
+https://github.com/jonas089/nftcollections - currently a private repository
 
 ## Currently supported - main.js
 - Query a Collection's / Product row's contract hash by reading the items key in the "Parent contract". (By Collection Name)
