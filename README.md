@@ -13,7 +13,7 @@ A supply chain project built upon the Casper-CEP78 NFT standard with requirement
 ## Architecture
 ![Preview](https://github.com/jonas089/watch-cep78/blob/master/mindmap.png "Contract Architecture")
 
-# Modular NFT Javascript library is read at 
+# Modular NFT Javascript library ( new repo )
 https://github.com/jonas089/nftcollections - currently a private repository
 
 ## Currently supported - main.js
